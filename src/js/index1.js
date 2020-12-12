@@ -72,7 +72,6 @@ function bandHtml(a) {
             </div>
         </li>
         `
-
         })
         $('.shopwrap').html(str)
         console.log(data)

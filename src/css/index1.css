@@ -453,10 +453,281 @@ header>div {
 
 /* #endregion */
 
-/* TAB选项框 */
-/* #region */
 
+
+/* 抢购1 */
+/* #region */
+.rush-list {
+    width: 1400px;
+    margin: 100px auto 0;
+    padding: 5px;
+    overflow: hidden;
+    transition: all .4s;
+}
+
+.rush-item {
+    display: flex;
+    margin-top: 20px;
+    width: 33%;
+    float: left;
+}
+
+.rush-item:nth-child(1), .rush-item:nth-child(2), .rush-item:nth-child(3) {
+    margin-top: 0;
+}
+
+.shadow {
+    margin-right: 40px;
+    height: 190px;
+    width: 100%;
+    transition: all .3s;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px #dedede;
+}
+
+.sec3-img {
+    width: 190px;
+    height: 190px;
+    cursor: pointer;
+    float: left;
+    position: relative;
+}
+
+.get-time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(241, 57, 58, 0.8);
+    padding: 3px 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    display: none;
+}
+
+.sec3-img img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.info {
+    overflow: hidden;
+    padding-left: 25px;
+    background: #fff;
+    height: 100%;
+}
+
+.info h3, .info p:nth-of-type(1) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.info h3 {
+    font-size: 16px;
+    color: #333;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.info h3:hover {
+    text-decoration: underline;
+}
+
+.info p:nth-of-type(1) {
+    color: #999;
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 16px;
+    height: 20px;
+}
+
+.info div:nth-of-type(1) {
+    margin: 10px 0;
+}
+
+.info p:nth-of-type(2) {
+    padding: 30px 0;
+}
+
+.info p:nth-of-type(2) span {
+    font-size: 18px;
+    color: #f1393a;
+    line-height: 1;
+}
+
+.rush-item, .stop-time {
+    font-size: 14px;
+}
+
+.hot {
+    color: #f1393a;
+}
+
+del {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #999;
+}
+
+.tt {
+    margin-top: 5px;
+    font-size: 14px;
+    width: 118px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    text-align: center;
+    /* outline: none; */
+    background: #83c44e;
+    color: #fff;
+    cursor: pointer;
+}
+@media only screen and (max-width: 1440px) {
+    .rush-list {
+        width: 100%;
+    }
+    .rush-item {
+        width: 50%;
+    }
+}
 /* #endregion */
+  
+.purch>ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.purch li {
+    width: 45%;
+    height: 220px;
+    margin-bottom: 30px;
+    margin-top: 200px;
+    background: rgb(241, 241, 241);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.purch li:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px #555;
+}
+
+.purch img {
+    width: 200px;
+    height: 99%;
+    border: 1px solid rgb(192, 190, 190);
+    box-shadow: 0px 0px 5px rgb(121, 119, 119);
+    border-radius: 10px;
+}
+
+.purch li>a {
+    display: inline-block;
+}
+
+.purch .box-right {
+    width: 260px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.purch .box-right a {
+    text-decoration: none;
+    color: rgb(88, 88, 88);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.purch .box-right p {
+    font-size: 1.1rem;
+}
+
+.purch b {
+    color: rgb(214, 14, 14);
+}
+
+.purch s {
+    margin-left: 20px;
+    color: rgb(173, 173, 173);
+}
+
+.purch .click {
+    width: 150px;
+    padding: 5px;
+    color: rgb(236, 234, 234);
+    font-weight: bold;
+    background: rgb(199, 12, 12);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.purch .times {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(249, 250, 249);
+    background: rgba(218, 18, 18, 0.8);
+    width: 201px;
+    height: 60px;
+    border-top-left-radius: 10px;
+}
+
+.purch .times-sub {
+    background: rgba(254, 255, 254, 0.705);
+    color: rgb(245, 30, 30);
+    margin-top: 5px;
+    font-size: 1.3rem;
+}
+
+.purch .end {
+    color: #fff;
+}
+
+.rush-list {
+    width: 1400px;
+    margin: 100px auto 0;
+    padding: 5px;
+    overflow: hidden;
+    transition: all .4s;
+}
+
+.rush-item {
+    display: flex;
+    margin-top: 20px;
+    width: 33%;
+    float: left;
+}
+
+.rush-item:nth-child(1), .rush-item:nth-child(2), .rush-item:nth-child(3) {
+    margin-top: 0;
+}
+
+
+
 
 /* 商品列表 */
 /* #region */

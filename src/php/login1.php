@@ -4,10 +4,9 @@ $password=$_POST['password'];
 
 $link=mysqli_connect('localhost:3307' , 'root' , 'root' , 'study');
 $sql="SELECT * FROM `usermessage` WHERE `name`='$name' AND `password`='$password' ";
-$sql1="INSERT INTO `usermessage` VALUES('237' ,'2www24' ,'33')";
-$res=mysqli_query($link , $sql1);
-$data = mysqli_fetch_all($res, MYSQLI_ASSOC);
 
+$res=mysqli_query($link , $sql);
+$data = mysqli_fetch_all($res, MYSQLI_ASSOC);
 if(count($data)){
     echo json_encode(array(
         "message"=>"成功",

@@ -31,7 +31,7 @@ var flagpwd = false;
 
 // 正则判断
 card.onblur = function () {
-    id = /^[a-zA-Z][0-9a-zA-Z]{1,10}$/.test(card.value);//字母开头，后面是1到5
+    id = /^[0-9a-zA-Z]{1,10}$/.test(card.value);//十位就可以了
     if (!id) {
         let str = "卡号";
         show(str, card);
@@ -39,7 +39,7 @@ card.onblur = function () {
 }
 
 pwd.onblur = function () {
-    flagpwd = /^\w{1,7}$/.test(pwd.value);
+    flagpwd = /^\w{1,7}$/.test(pwd.value);//七位就可以了
     if (!flagpwd) {
         let str = "密码";
         show(str, pwd);
