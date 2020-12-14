@@ -33,11 +33,27 @@
 
 
 //添加事件
-$('.ceshi').click(function(){
+const start=window.localStorage.getItem('src')
+if(start){
+$('.section1').html(start)
+}
+
+$(document).keydown(function(e){
+   e.stopPropagation
+   if(e.code=='Enter'){
    const value=$('#title').val()//获取到文本框的的内容
     add(value)
     $('#title').val('')
+    window.localStorage.setItem('src' , $('.section1').html())
+}
 })
+
+// $('.ceshi').click(function(){
+//    const value=$('#title').val()//获取到文本框的的内容
+//     add(value)
+//     $('#title').val('')
+//     window.localStorage.setItem('src' , $('.section1').html())
+// })
 
 //添加
 function add(item){
@@ -47,6 +63,7 @@ function add(item){
     <a href="javascript:remove(1)">-</a>
 </li>`)
     $('#todolist').append(lii)
+ 
 }
 
 
@@ -68,6 +85,8 @@ function numChange(){
          }
         
          numChange()
+         $('#donelist input').attr('checked' , 'checked')
+         window.localStorage.setItem('src' , $('.section1').html())
     })
 
     $('#donelist').on( 'click' , 'input',function(){
@@ -77,6 +96,12 @@ function numChange(){
           
          
           numChange()
+          
+         Array.from (document.querySelectorAll('#todolist input')).forEach(function(item){
+             $('#todolist input').removeAttr('checked')
+                item.checked=false
+         }) 
+          window.localStorage.setItem('src' , $('.section1').html())
      })
 
 
@@ -88,18 +113,22 @@ function numChange(){
         const inp=$('<input type="text"  placeholder="添加ToDo"></input>')
         $(this).html('')
         $(this).wrap('<input class="ee" type="text"></input>')
-        $(this).off('click')
+ 
     })
 
     $('#todolist').on('blur' , 'li .ee' ,function(){
             console.log(11)
             const value=$(this).val()
+            if(!value){
+                alert('请输入文本')
+                return
+            }
             const p=$(`<p>${value}</p>`)
             const par=$(this).parent()
             $(this).find('p').html(value)
             $(this).remove()
             par.append(p)
-        
+            window.localStorage.setItem('src' , $('.section1').html())
         }
     )
    
@@ -119,6 +148,7 @@ $('ul a').click(function(e){
     console.log($(this))
     $(this).parent().remove()
     numChange()
+    window.localStorage.setItem('src' , $('.section1').html())
 })
 
 $('ol a').click(function(e){
@@ -126,6 +156,7 @@ $('ol a').click(function(e){
     console.log($(this))
     $(this).parent().remove()
     numChange()
+    window.localStorage.setItem('src' , $('.section1').html())
 })
 
 
